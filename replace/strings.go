@@ -10,12 +10,16 @@ const (
 	NAME = "ファルコン・パンチ"
 )
 
-func NameOfToday() string {
-	length := len([]rune(NAME))
+func NameOfToday(base string) string {
+	if base == "" {
+		base = NAME
+	}
+
+	length := len([]rune(base))
 
 	name := make(map[int]string)
 	for i := 0; i < length; i++ {
-		name[i] = string([]rune(NAME)[i])
+		name[i] = string([]rune(base)[i])
 	}
 
 	output := make([]string, length)

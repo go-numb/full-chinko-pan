@@ -13,13 +13,15 @@ func TestString(t *testing.T) {
 		fmt.Println("exec time: ", end.Sub(start))
 	}()
 
+	base := "あああああああああああああああああああああああああああああああ！！！！！！！！！！！(ﾌﾞﾘﾌﾞﾘﾌﾞﾘﾌﾞﾘｭﾘｭﾘｭﾘｭﾘｭﾘｭ！！！！！！ﾌﾞﾂﾁﾁﾌﾞﾌﾞﾌﾞﾁﾁﾁﾁﾌﾞﾘﾘｲﾘﾌﾞﾌﾞﾌﾞﾌ"
+
 	var (
 		count int
 		name  string
 	)
 	for {
-		name = NameOfToday()
-		if name == NAME {
+		name = NameOfToday(base)
+		if name == base {
 			break
 		}
 		count++
